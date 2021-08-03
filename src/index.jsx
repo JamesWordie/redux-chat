@@ -33,8 +33,8 @@ const messages = [
 const initialState = {
   messages,
   currentUser: window.prompt('What is your username?' || `anonymous${Math.floor(10 + (Math.random() * 90))}`),
-  channels: ['General', 'React', 'Edinburgh', 'Javascript', 'Help'],
-  selectedChannel: 'General'
+  channels: ['general', 'react', 'edinburgh', 'javascript', 'help'],
+  selectedChannel: 'general'
 };
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

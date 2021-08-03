@@ -26,7 +26,6 @@ class MessageList extends React.Component {
 
   componentDidUpdate() {
     const { current } = this.list;
-    // console.log(current)
     current.scrollTop = current.scrollHeight;
   }
 
@@ -34,7 +33,7 @@ class MessageList extends React.Component {
     const { messages } = this.props;
     return (
       <div className="row justify-content-center align-itesm-center mt-5">
-        <div className="col-md-6" ref={ this.list } >
+        <div className="col-6 col-md-10" ref={ this.list } >
           {this.renderMessages(messages)}
         </div>
         <MessageBar />

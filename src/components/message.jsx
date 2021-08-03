@@ -4,7 +4,7 @@ import ReactTimeAgo from 'react-time-ago';
 const Message = (props) => {
   const { author, content, created_at } = props.message;
   return (
-    <div className="card my-3">
+    <div className="card mb-3">
       <div className="card-body">
         <div className="d-inline-flex justify-content-between align-items-center w-100">
           <div className="d-flex flex-column justify-content-center">

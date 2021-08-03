@@ -3,6 +3,7 @@ import wagonChat from '../api/wagonChat';
 
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const POST_MESSAGE = 'POST_MESSAGE';
+export const SELECTED_CHANNEL = 'SELECTED_CHANNEL';
 
 export const fetchMessages = (channel) => async dispatch => {
   const response = await wagonChat.get(`${channel}/messages`);
@@ -14,4 +15,8 @@ export const createMessage = (channel, author, content) => async dispatch => {
   const response = await wagonChat.post(`${channel}/messages`, { author, content });
 
   dispatch({ type: POST_MESSAGE, payload: response.data })
+}
+
+export const newSelectedChannel = (channel) => {
+  return { type: SELECTED_CHANNEL, payload: channel }
 }
