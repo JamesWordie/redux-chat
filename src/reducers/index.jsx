@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
+import messagesReducer from "./messagesReducer";
 
 const identityReducer = (state = null) => state;
 
 const reducers = combineReducers({
-  messages: identityReducer,
+  messages: messagesReducer,
   currentUser: identityReducer,
   channels: identityReducer,
   selectedChannel: identityReducer
