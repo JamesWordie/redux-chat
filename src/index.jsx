@@ -4,12 +4,15 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
 
 // internal modules
 import App from './components/app';
-// import '../assets/stylesheets/application.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import reducers from './reducers';
+
+TimeAgo.addDefaultLocale(en);
 
 // State and reducers
 const messages = [
