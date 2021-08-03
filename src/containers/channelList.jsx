@@ -26,6 +26,7 @@ class ChannelList extends React.Component {
   render() {
     return (
       <div className="d-flex flex-column mt-5">
+        <h3 className="mb-5">Channel</h3>
         <div className="btn-group-vertical">
           {this.renderChannels(this.props.channels)}
         </div>

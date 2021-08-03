@@ -38,7 +38,7 @@ const MessageForm = props => {
 
   return (
     <Form
-      // initialValues={props.initialValues}
+      initialValues={''}
       onSubmit={onSubmit}
       validate={validate}
       render={({ handleSubmit }) => (

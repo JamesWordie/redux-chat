@@ -18,7 +18,7 @@ class MessageList extends React.Component {
 
   componentDidMount() {
     setInterval(() => {
-      this.props.fetchMessages('general')
+      this.props.fetchMessages(this.props.selectedChannel);
     }, 5000);
 
     clearInterval();
@@ -26,6 +26,7 @@ class MessageList extends React.Component {
 
   componentDidUpdate() {
     const { current } = this.list;
+    current.focus();
     current.scrollTop = current.scrollHeight;
   }
 
@@ -33,17 +34,23 @@ class MessageList extends React.Component {
     const { messages } = this.props;
     return (
       <div className="row justify-content-center align-itesm-center mt-5">
-        <div className="col-6 col-md-10" ref={ this.list } >
+        <h3 className="mb-5">{`#${this.props.selectedChannel} Channel`}</h3>
+        <div className="col-6 col-md-10" >
           {this.renderMessages(messages)}
         </div>
-        <MessageBar />
+        <div ref={ this.list } id="messageBar">
+          <MessageBar />
+        </div>
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  return { messages: state.messages }
+  return {
+    messages: state.messages,
+    selectedChannel: state.selectedChannel
+  }
 }
 
 export default connect(mapStateToProps, { fetchMessages })(MessageList);
